@@ -1,0 +1,25 @@
+<app-nav-home-page></app-nav-home-page>
+<div>
+  <div class="p-5 container">
+    <div class="card">
+      <div class="card-header">
+        <h3>Registrar-se</h3>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="formUser" class="form" role="form" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input formControlName="email" type="email" class="form-control" placeholder="Digite o e-mail" id="email">
+          </div>
+          <div class="form-group">
+            <label for="password">Senha:</label>
+            <input formControlName="password" type="password" class="form-control" placeholder="Digite sua senha" id="password">
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary btn-dark">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

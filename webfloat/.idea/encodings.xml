@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/angularWebfloat/src/app/components/nav/nav-home-page/nav-home-page.component.ts" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/angularWebfloat/src/app/views/home/home.component.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/angularWebfloat/src/app/views/home/home.component.ts" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/angularWebfloat/src/app/views/login/login.component.ts" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/angularWebfloat/src/app/views/signup/signup.component.ts" charset="UTF-8" />
+  </component>
+</project>

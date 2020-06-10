@@ -36,7 +36,7 @@ class LoginController extends Controller
       ]);
 
       if (!auth()->attempt($loginData)) {
-         return response(['message' => 'Invalid Credentials']);
+         return response(['message' => 'Credenciais Inválidas'], 401);
       }
 
       $accessToken = auth()->user()->createToken('authToken')->accessToken;
