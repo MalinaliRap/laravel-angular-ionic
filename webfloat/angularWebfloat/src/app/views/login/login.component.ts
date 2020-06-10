@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from "../../models/user.model";
-import {FormGroup, FormControl} from "@angular/forms";
+import {FormGroup, FormControl, Validators} from "@angular/forms";
 import {UsersService} from "../../services/users.service";
 import { ToastrService } from 'ngx-toastr';
 import {Router} from "@angular/router";
@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   public user: User;
   public erro: any;
   formUser : FormGroup;
+  submitted = false;
 
   constructor(
       private userService : UsersService,
@@ -31,12 +32,23 @@ export class LoginComponent implements OnInit {
 
   createForm(user : User){
     this.formUser = new FormGroup({
-        email : new FormControl(user.email),
-        password : new FormControl(user.password),
+        email : new FormControl(user.email,[
+            Validators.required,
+            Validators.email,
+        ]),
+        password : new FormControl(user.password,[
+            Validators.required,
+            Validators.minLength(4),
+        ]),
     })
   }
 
+  get f() {
+      return this.formUser.controls;
+  }
+
   onSubmit(){
+      this.submitted = true;
       this.userService.login(this.formUser.value).subscribe( (data: User) => {
           this.user = data.user;
           this.user.accessToken = data.access_token;
